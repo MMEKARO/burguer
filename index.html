@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cardápio Digital</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Página Inicial -->
+  <div id="home" class="section active">
+    <h1>Bem-vindo ao Da Quebrada Burguer & Açaí!</h1>
+    <img src="hamburguer.jpg" alt="Hambúrguer estiloso" class="hero-image">
+    <div class="home-buttons">
+      <button onclick="navigateTo('menu')">Ver Cardápio</button>
+      <button onclick="navigateTo('redes-sociais')">Redes Sociais</button>
+      <button onclick="navigateTo('classificacao')">Avaliar</button>
+    </div>
+  </div>
+
+  <!-- Cardápio -->
+  <div id="menu" class="section">
+    <h2>Cardápio</h2>
+    <div id="menu-list">
+      <!-- Exemplo de item do cardápio com vídeo e imagem -->
+      <div class="menu-item">
+        <img src="lanche1.jpg" alt="Lanche Especial">
+        <h3>BURGUER DA QUEBRADA ARTESANAL DUPLO</h3>
+        <p>PÃO DE BRIOCHE, 2 HAMBÚRGUER 120g, 2 QUEIJO CHEDDAR, CEBOLA, 2 BACON, ALFACE, TOMATE, OVO</p>
+        <p>Preço: R$28,00</p>
+        <video src="lanche-video.mp4" controls></video>
+        <div class="quantity">
+          <label>Quantidade: 
+            <input type="number" id="quantidade-lanche1" min="1" value="1">
+          </label>
+        </div>
+        <label>Observação: <input type="text" id="observacao-lanche1"></label>
+        <button onclick="adicionarAoCarrinho('Lanche Especial', 28, 'observacao-lanche1', 'quantidade-lanche1')">Adicionar ao Carrinho</button>
+      </div>
+
+      <!-- Outro item de exemplo -->
+      <div class="menu-item">
+        <img src="lanche1.jpg" alt="Lanche Especial">
+        <h3>BURGUER DA QUEBRADA ARTESANAL DUPLO</h3>
+        <p>PÃO DE BRIOCHE, 2 HAMBÚRGUER 120g, 2 QUEIJO CHEDDAR, CEBOLA, 2 BACON, ALFACE, TOMATE, OVO</p>
+        <p>Preço: R$28,00</p>
+        <video src="lanche-video.mp4" controls></video>
+        <div class="quantity">
+          <label>Quantidade: 
+            <input type="number" id="quantidade-lanche2" min="1" value="1">
+          </label>
+        </div>
+        <label>Observação: <input type="text" id="observacao-lanche2"></label>
+        <button onclick="adicionarAoCarrinho('Lanche Especial', 28, 'observacao-lanche2', 'quantidade-lanche2')">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+    <!-- Carrinho -->
+    <div id="carrinho">
+      <h2>Carrinho de Compras</h2>
+      <ul id="carrinho-itens"></ul>
+      <p id="total"></p>
+      <button onclick="finalizarPedido()">Finalizar Pedido</button>
+    </div>
+
+    <button class="back-button" onclick="navigateTo('home')">Voltar ao Início</button>
+  </div>
+
+  <!-- Redes Sociais -->
+  <div id="redes-sociais" class="section">
+    <h2>Siga-nos nas Redes Sociais</h2>
+    <div class="social-buttons">
+      <a href="https://wa.me/5511949890715" target="_blank">WhatsApp</a>
+      <a href="https://www.instagram.com/daquebrada.burguer/" target="_blank">Instagram</a>
+      <a href="https://facebook.com/SEUPERFIL" target="_blank">Facebook</a>
+    </div>
+    <button class="back-button" onclick="navigateTo('home')">Voltar ao Início</button>
+  </div>
+
+  <!-- Área de Avaliação -->
+  <div id="classificacao" class="section">
+    <h2>Avalie Nossos Lanches</h2>
+    <div id="avaliacao">
+      <label>Classifique com estrelas:</label>
+      <div class="estrelas">
+        <span onclick="avaliar(1)">★</span>
+        <span onclick="avaliar(2)">★</span>
+        <span onclick="avaliar(3)">★</span>
+        <span onclick="avaliar(4)">★</span>
+        <span onclick="avaliar(5)">★</span>
+      </div>
+      <textarea id="comentario" placeholder="Deixe seu comentário"></textarea>
+      <button onclick="compartilharComentario()">Compartilhar no Instagram</button>
+    </div>
+    <button class="back-button" onclick="navigateTo('home')">Voltar ao Início</button>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
